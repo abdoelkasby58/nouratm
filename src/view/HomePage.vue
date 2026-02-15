@@ -33,14 +33,14 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
-import PhotoSxs from "../assets/adrian-ordonez-P0W27GRvyww-unsplash.jpg";
-import PhotoTwo from "../assets/clement-lauwaert-ftewoitMhUs-unsplash.jpg";
-import PhotoThree from "../assets/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg";
-import PhotoFour from "../assets/dlxmedia-hu-UkpTGYox6RM-unsplash.jpg";
-import PhotoFive from "../assets/kari-shea-1SAnrIxw5OY-unsplash.jpg";
-import PhotoOne from "../assets/logan-voss-YRU6_P4mSvw-unsplash.jpg";
-import PhotoSive from "../assets/logan-weaver-lgnwvr-xs0R7ltTdTM-unsplash.jpg";
-import PhotoUat from "../assets/tereza-ruba-TK-rrTgYqzo-unsplash.jpg";
+import PhotoSxs from "../assets/phtoOne.png";
+import PhotoTwo from "../assets/phtoTwo.png";
+import PhotoThree from "../assets/photoThree.png";
+import PhotoFour from "../assets/photoFour.png";
+import PhotoFive from "../assets/photoFive.png";
+import PhotoOne from "../assets/photoSxs.png";
+import PhotoSive from "../assets/photoSive.png";
+import PhotoUat from "../assets/photoUat.png";
 
 const items = ref([
   { src: PhotoOne },

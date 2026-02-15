@@ -4,4 +4,9 @@
 <script setup>
 import HomePage from "./view/HomePage.vue";
 </script>
-<style scoped></style>
+<style scoped>
+template {
+  margin: 0;
+  padding: 0;
+}
+</style>

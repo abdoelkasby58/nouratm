@@ -19,7 +19,7 @@
         :key="index"
         class="moving-item"
         :style="{
-          '--delay': (index - 1) * -30.5 + 's',
+          '--delay': (index - 0) * -30.5 + 's',
           '--duration': index + 10 + 's',
         }"
       >
@@ -33,12 +33,12 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
-import PhotoOne from "../assets/adrian-ordonez-P0W27GRvyww-unsplash.jpg";
+import PhotoSxs from "../assets/adrian-ordonez-P0W27GRvyww-unsplash.jpg";
 import PhotoTwo from "../assets/clement-lauwaert-ftewoitMhUs-unsplash.jpg";
 import PhotoThree from "../assets/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg";
 import PhotoFour from "../assets/dlxmedia-hu-UkpTGYox6RM-unsplash.jpg";
 import PhotoFive from "../assets/kari-shea-1SAnrIxw5OY-unsplash.jpg";
-import PhotoSxs from "../assets/logan-voss-YRU6_P4mSvw-unsplash.jpg";
+import PhotoOne from "../assets/logan-voss-YRU6_P4mSvw-unsplash.jpg";
 import PhotoSive from "../assets/logan-weaver-lgnwvr-xs0R7ltTdTM-unsplash.jpg";
 import PhotoUat from "../assets/tereza-ruba-TK-rrTgYqzo-unsplash.jpg";
 
@@ -53,8 +53,8 @@ const items = ref([
   { src: PhotoUat },
 ]);
 
-const titleEl = ref(null); 
-const spanEl = ref(null); 
+const titleEl = ref(null);
+const spanEl = ref(null);
 const currentIndex = ref(0);
 
 const phrases = [
@@ -75,7 +75,7 @@ onMounted(() => {
       },
     });
 
-   //بيدخل من تحت 
+    //بيدخل من تحت
     tl.fromTo(
       titleEl.value,
       { opacity: 0, y: 30 },
@@ -113,7 +113,15 @@ onUnmounted(() => {
 });
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Caveat:wght@400..700&family=Federant&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kalam:wght@300;400;700&family=Momo+Signature&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans+Arabic:wght@100..900&family=Playwrite+NZ+Basic:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
+@font-face {
+  font-family: "MyFont";
+  src: url("../fonts/Federant-Regular.ttf");
+}
 .hero {
+  margin: 0;
+  padding: 0;
+  font-family: "MyFont";
   background-color: #f8f7f3;
   position: relative;
   height: 100vh;
@@ -157,7 +165,7 @@ onUnmounted(() => {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   animation: imgrotate var(--delay) infinite;
   animation-duration: var(--duration);
-object-fit: cover;
+  object-fit: cover;
 }
 @keyframes imgrotate {
   0% {

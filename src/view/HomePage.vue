@@ -33,14 +33,14 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
-import PhotoSxs from "../assets/phtoOne.png";
-import PhotoTwo from "../assets/phtoTwo.png";
-import PhotoThree from "../assets/photoThree.png";
-import PhotoFour from "../assets/photoFour.png";
-import PhotoFive from "../assets/photoFive.png";
-import PhotoOne from "../assets/photoSxs.png";
-import PhotoSive from "../assets/photoSive.png";
-import PhotoUat from "../assets/photoUat.png";
+import PhotoSxs from "@/assets/phtoOne.png";
+import PhotoTwo from "@/assets/phtoTwo.png";
+import PhotoThree from "@/assets/photoThree.png";
+import PhotoFour from "@/assets/photoFour.png";
+import PhotoFive from "@/assets/photoFive.png";
+import PhotoOne from "@/assets/photoSxs.png";
+import PhotoSive from "@/assets/photoSive.png";
+import PhotoUat from "@/assets/photoUat.png";
 
 const items = ref([
   { src: PhotoOne },
@@ -191,7 +191,6 @@ onUnmounted(() => {
   justify-items: center;
 }
 .main-title {
-  font-size: 3rem;
   font-weight: bold;
   color: black;
   font-family: Verdana;
@@ -206,10 +205,12 @@ onUnmounted(() => {
 .title-part {
   color: black;
   text-transform: capitalize;
+  font-size: 45px;
 }
 .highlight-part {
   color: rgba(0, 0, 0, 0.521);
   text-transform: capitalize;
+  font-size: 45px;
 }
 .main-pragraph {
   text-align: center;
@@ -225,6 +226,7 @@ onUnmounted(() => {
   outline: none;
   border: none;
   z-index: 1;
+  font-size: 17px;
   transition:
     transform 0.4s ease,
     box-shadow 0.4s ease;
@@ -239,5 +241,129 @@ onUnmounted(() => {
   cursor: pointer;
   transform: scale(1) translateZ(5px);
   /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); */
+}
+@media (max-width: 1024px) {
+  .moving-item {
+    position: absolute;
+    width: 90px;
+    height: 120px;
+
+  offset-path: path(
+      "M 400,400 m -240,0 a 240,240 0 1,0 480,0 a 240,240 0 1,0 -480,0"
+    );
+
+    animation: moveOnPath 250s linear infinite;
+    animation-delay: var(--delay);
+    offset-rotate: 0deg;
+  }
+
+  .inner-img img {
+    width: 100px;
+    height: 120px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: imgrotate var(--duration) linear infinite;
+    object-fit: cover;
+  }
+
+  .title-part {
+    color: black;
+    text-transform: capitalize;
+    font-size: 38px;
+  }
+
+  .highlight-part {
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+    font-size: 30px;
+  }
+
+  .main-pragraph {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 10px;
+  }
+
+  .main-btn {
+    width: 150px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: black;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    transition:
+      transform 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .main-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (max-width: 600px) {
+  .moving-item {
+    position: absolute;
+    width: 90px;
+    height: 120px;
+
+    offset-path: path(
+      "M 390,450 m -120,0 a 150,150 0 1,0 300,0 a 160,160 0 1,0 -300,0"
+    );
+
+    animation: moveOnPath 250s linear infinite;
+    animation-delay: var(--delay);
+    offset-rotate: 0deg;
+  }
+
+  .inner-img img {
+    width: 50px;
+    height: 80px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: imgrotate var(--duration) linear infinite;
+    object-fit: cover;
+  }
+
+  .title-part {
+    color: black;
+    text-transform: capitalize;
+    font-size: 28px;
+  }
+
+  .highlight-part {
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+
+  .main-pragraph {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 10px;
+  }
+
+  .main-btn {
+    width: 90px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: black;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    transition:
+      transform 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .main-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
 }
 </style>
